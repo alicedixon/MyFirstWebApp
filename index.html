@@ -76,18 +76,18 @@
         #subscribe label {
             font-size: 1em;
             font-weight: bold;
-            color: #555;
+            color: black;
             text-align: left;
         }
         #subscribe input {
             width: 100%;
             padding: 10px;
-            border: 1px solid #ccc;
+            border: 1px solid black;
             border-radius: 5px;
             font-size: 1em;
         }
         #subscribe button {
-            background-color: #007bff; /* Primary color */
+            background-color: #007bff;
             color: white;
             padding: 10px 15px;
             border: none;
@@ -96,19 +96,22 @@
             cursor: pointer;
             transition: background 0.3s ease;
         }
-
+        #subscribe input:focus, #subscribe button:focus {
+            outline: 2px solid #007BFF;
+        }
         #subscribe button:hover {
             background-color: #0056b3;
         }
         a {
             display: inline-block;
-            padding: 12px 24px; /* Larger padding for touch targets */
-            font-size: 16px; /* Ensure legibility */
-            text-decoration: none; /* Optional: Remove underline */
+            padding: 12px 24px;
+            font-size: 16px;
+            text-decoration: none;
         }
         a:focus, a:hover {
             background-color: #e9ecef;
             outline: 2px solid #007BFF;
+            color: #052c55;
         }
     </style>
 </head>
