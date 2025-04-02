@@ -55,17 +55,63 @@
             align-items: center;
             margin-bottom: 8px;
         }
+        #subscribe {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            max-width: 400px;
+            margin: 20px auto;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        #subscribe h2 {
+            font-size: 1.5em;
+            color: black;
+        }
+        #subscribe form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        #subscribe label {
+            font-size: 1em;
+            font-weight: bold;
+            color: #555;
+            text-align: left;
+        }
+        #subscribe input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+        #subscribe button {
+            background-color: #007bff; /* Primary color */
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        #subscribe button:hover {
+            background-color: #0056b3;
+        }
     </style>
 </head>
 <body>
     <header>
         <h1>Women's Domestic Cricket in England & Wales</h1>
     </header>
-    <nav>
+    <nav aria-label="Main Navigation">
         <a href="#introduction">Introduction</a>
         <a href="#teams">Teams</a>
         <a href="#competitions">Competitions</a>
         <a href="#news">News</a>
+        <a href="#subscribe">Subscribe</a>
     </nav>
     <div class="container">
         <section id="introduction" class="section">
@@ -77,7 +123,7 @@
             
             <h3>Tier 1 (Fully Professional)</h3>
             <ul>
-                <li><img src="images/teams/durham.png" alt="Durham Logo"> Durham</li>
+                <li><img src="images/teams/durham.PNG" alt="Durham Logo"> Durham</li>
                 <li><img src="images/teams/essex.png" alt="Essex Logo"> Essex</li>
                 <li><img src="images/teams/hampshire.png" alt="Hampshire Logo"> Hampshire</li>
                 <li><img src="images/teams/lancashire.png" alt="Lancashire Logo"> Lancashire</li>
@@ -101,19 +147,45 @@
                 <li><img src="images/teams/yorkshire.png" alt="Yorkshire Logo"> Yorkshire</li>
             </ul>
         </section>
-        <section id="competitions" class="section">
-            <h2>Competitions</h2>
+        <section id="competitions" class="section" role="region" aria-labelledby="comp-title">
+            <h2 id="comp-title">Competitions</h2>
             <p>Teams will compete in three competitions this season:</p>
             <ul>
-                <li><a href="https://www.ecb.co.uk/t20-blast-women" target="_blank">T20 Blast</a></li>
-                <li><a href="https://www.ecb.co.uk/one-day-cup-women" target="_blank">One-Day Cup</a></li>
-                <li><a href="https://www.ecb.co.uk/news/4171620/draw-revealed-for-first-ever-vitality-t20-womens-county-cup" target="_blank">T20 County Cup</a></li>
+                <li>
+                    <a href="https://www.ecb.co.uk/t20-blast-women" target="_blank" rel="noopener" 
+                       aria-label="Visit the official T20 Blast page (opens in a new tab)" 
+                       title="Opens in a new tab">T20 Blast</a>
+                </li>
+                <li>
+                    <a href="https://www.ecb.co.uk/one-day-cup-women" target="_blank" rel="noopener"
+                       aria-label="Visit the official One-Day Cup page (opens in a new tab)" 
+                       title="Opens in a new tab">One-Day Cup</a>
+                </li>
+                <li>
+                    <a href="https://www.ecb.co.uk/news/4171620/draw-revealed-for-first-ever-vitality-t20-womens-county-cup" 
+                       target="_blank" rel="noopener"
+                       aria-label="Read the latest news on the T20 County Cup (opens in a new tab)" 
+                       title="Opens in a new tab">T20 County Cup</a>
+                </li>
             </ul>
         </section>
         <section id="news" class="section">
             <h2>Recent News</h2>
             <p>Stay tuned for the latest updates on women's domestic cricket.</p>
         </section>
+        <section id="subscribe">
+            <h2>Subscribe to Our Mailing List</h2>
+            <form action="subscribe.php" method="post">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+        
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+        
+                <button type="submit">Subscribe</button>
+            </form>
+        </section>
+        
     </div>
 </body>
 </html>
