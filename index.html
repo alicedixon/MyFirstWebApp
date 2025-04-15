@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Women's Domestic Cricket - England & Wales</title>
+    <title>Women's Cricket Hub</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -21,6 +21,10 @@
             text-align: center;
             padding: 1rem;
             background-color: #052c55;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
         }
         nav a {
             color: white;
@@ -31,7 +35,7 @@
         .container {
             max-width: 800px;
             margin: auto;
-            padding: 20px;
+            padding: 20px 10px;
         }
         .section {
             background: white;
@@ -113,11 +117,51 @@
             outline: 2px solid #007BFF;
             color: #052c55;
         }
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 1.5rem;
+            }
+            nav a {
+                display: block;
+                margin: 5px 0;
+                font-size: 1rem;
+            }
+            #teams ul {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 12px;
+            }
+            #teams li {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                background-color: #f1f1f1;
+                padding: 10px;
+                border-radius: 6px;
+            }
+            #teams img {
+                margin: 0 0 6px 0;
+                width: 40px;
+                height: auto;
+            }
+            .section {
+                padding: 15px;
+            }
+            #subscribe {
+                padding: 15px;
+            }
+            #subscribe input,
+            #subscribe button {
+                font-size: 1rem;
+                padding: 8px;
+            }
+}
     </style>
 </head>
 <body>
     <header>
-        <h1>Women's Domestic Cricket in England & Wales</h1>
+        <h1>The Women's Cricket Hub</h1>
     </header>
     <nav aria-label="Main Navigation">
         <a href="#introduction">Introduction</a>
@@ -130,6 +174,7 @@
         <section id="introduction" class="section">
             <h2>Introduction</h2>
             <p>Women's domestic cricket in England and Wales has grown significantly in recent years, featuring professional teams and competitive tournaments. The England & Wales Cricket Board have recently committed to a complete restructure of professional women's cricket, resulting in a new 3-tiered system.</p>
+            <p>Each of the 3 tiers have different levels of professionalisation. Tier 1 teams are fully professional, Tier 2 teams are semi-professional, and Tier 3 teams are amateur - you can find out more about the teams competing in each tier below.</p>
         </section>
         <section id="teams" class="section">
             <h2>Teams</h2>
