@@ -84,11 +84,14 @@
             text-align: left;
         }
         #subscribe input {
-            width: 100%;
             padding: 10px;
             border: 1px solid black;
             border-radius: 5px;
             font-size: 1em;
+            width: 90%; 
+            max-width: 300px;
+            margin: 0 auto;
+            display: block;
         }
         #subscribe button {
             background-color: #007bff;
@@ -99,6 +102,9 @@
             font-size: 1.2em;
             cursor: pointer;
             transition: background 0.3s ease;
+            max-width: 300px;
+            display: block;
+            margin: 0 auto;
         }
         #subscribe input:focus, #subscribe button:focus {
             outline: 2px solid #007BFF;
@@ -116,6 +122,24 @@
             background-color: #e9ecef;
             outline: 2px solid #007BFF;
             color: #052c55;
+        }
+        .dark-mode {
+            background-color: #121212;
+            color: white;
+        }
+        .dark-mode header,
+        .dark-mode nav,
+        .dark-mode .section,
+        .dark-mode #subscribe {
+            background-color: #1e1e1e;
+            color: white;
+        }
+        .dark-mode nav a {
+            color: #ddd;
+        }
+        .dark-mode a:hover {
+            background-color: #333;
+            color: #fff;
         }
         @media (max-width: 600px) {
             header h1 {
@@ -232,7 +256,8 @@
             <p>Stay tuned for the latest updates on women's domestic cricket.</p>
         </section>
         <section id="subscribe">
-            <h2>Subscribe to Our Mailing List</h2>
+            <h2>Subscribe to our newsletter</h2>
+            <p>You will receive a monthly update of all things women's cricket, direct to your inbox!</p>
             <form action="subscribe.php" method="post">
                 <label for="name">Name:</label>
                 <input type="text" id="name" name="name" required>
@@ -243,7 +268,46 @@
                 <button type="submit">Subscribe</button>
             </form>
         </section>
-        
     </div>
+    <button id="toggleTheme" style="
+        position: fixed;
+        bottom: 20px;
+        left: 20px;
+        padding: 10px 15px;
+        background-color: #333;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        z-index: 1000;
+        ">🌙 Dark Mode</button>
+    <button id="backToTop" style="
+        display: none;
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        padding: 10px 15px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        z-index: 1000;
+        ">⬆ Top</button>
+    <script>
+        const backToTop = document.getElementById("backToTop");
+        
+        window.onscroll = () => {
+            backToTop.style.display = window.scrollY > 300 ? "block" : "none";
+        };
+        
+        backToTop.onclick = () => {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        };
+        
+        document.getElementById("toggleTheme").addEventListener("click", () => {
+            document.body.classList.toggle("dark-mode");
+        });
+        </script>  
 </body>
 </html>
