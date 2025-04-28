@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Durham - Women's Cricket Hub</title>
+  <link rel="stylesheet" href="styling.css" />
+</head>
+<body>
+  <div class="header-row">
+    <div class="header-left">
+      <a href="index.html" class="back-button-link">
+        <button type="button" class="back-button">← Back</button>
+      </a>
+    </div>
+  
+    <div class="header-center">
+      <img src="images/teams/durham.png" alt="Durham Logo" class="team-logo">
+      <h1>Durham</h1>
+    </div>
+  
+    <div class="header-right">
+      <img src="images/wch logo.png" alt="Women's Cricket Hub Logo" class="site-logo">
+    </div>
+  </div>  
+
+  <div class="container"> 
+    <section id="about" class="section">
+      <h2>About</h2>
+      <p>Durham is one of eight new women's cricket teams that are on a full-time professional training and games programme.</p>
+      <p>They are based at the Riverside ground in Chester-le-Street, County Durham, which has also been home to a number of England Men's test matches in recent years.</p>
+
+      <div class="ground-image-container">
+        <img src="images/grounds/riverside.jpg" alt="Riverside Ground, Chester-le-Street" class="ground-image" />
+      </div>
+    </section>
+
+    <section id="squad" class="section">
+      <h2>Squad</h2>
+      <p>Squad list coming soon...</p>
+    </section>
+
+    <section id="fixtures" class="section">
+      <h2>Upcoming Fixtures</h2>
+      <p>Fixtures to be announced soon...</p>
+    </section>
+
+    <section id="weather" class="section">
+      <h2>Weather Forecast</h2>
+      <div id="weather-container">
+        Here is the current forecast for Riverside, Chester-le-Street:
+      </div>
+    </section>
+    
+  </div>
+
+  <footer class="site-footer">
+    <p>© 2025 Women's Cricket Hub</p>
+  </footer>
+
+  <script>
+    const apiKey = `6470fe289b480f4e12640ab6f8810253`; 
+    const lat = 54.8588;
+    const lon = -1.5746;
+  
+    fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`)
+      .then(response => response.json())
+      .then(data => {
+        const weatherContainer = document.getElementById('weather-container');
+        
+        const temperature = data.main.temp;
+        const description = data.weather[0].description;
+        const icon = data.weather[0].icon;
+        
+        weatherContainer.innerHTML = `
+          <img src="https://openweathermap.org/img/wn/${icon}@2x.png" alt="${description}" />
+          <p><strong>${temperature}°C</strong> - ${description}</p>
+        `;
+      })
+      .catch(error => {
+        console.error('Error fetching weather:', error);
+        document.getElementById('weather-container').innerHTML = 'Unable to load weather data.';
+      });
+  </script>
+  
+</body>
+</html>

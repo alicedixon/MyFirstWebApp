@@ -4,267 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Women's Cricket Hub</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f8f9fa;
-        }
-        header {
-            background-color: #007bff;
-            color: white;
-            text-align: center;
-            padding: 1rem;
-        }
-        nav {
-            text-align: center;
-            padding: 1rem;
-            background-color: #052c55;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 10px;
-        }
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin: 0 15px;
-            font-weight: bold;
-        }
-        .container {
-            max-width: 800px;
-            margin: auto;
-            padding: 20px 10px;
-        }
-        .section {
-            background: white;
-            padding: 20px;
-            margin-bottom: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        #teams img {
-            vertical-align: middle;
-            margin-right: 10px;
-            width: 30px;
-            border-radius: 4px;
-        }
-        #teams ul {
-            list-style-type: none;
-            padding: 0;
-        }
-        #teams li {
-            display: flex;
-            align-items: center;
-            margin-bottom: 8px;
-        }
-        #subscribe {
-            background-color: white;
-            padding: 20px;
-            border-radius: 10px;
-            text-align: center;
-            max-width: 400px;
-            margin: 20px auto;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-        #subscribe h2 {
-            font-size: 1.5em;
-            color: black;
-        }
-        #subscribe form {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-        #subscribe label {
-            font-size: 1em;
-            font-weight: bold;
-            color: black;
-            text-align: left;
-        }
-        #subscribe input {
-            padding: 10px;
-            border: 1px solid black;
-            border-radius: 5px;
-            font-size: 1em;
-            width: 90%; 
-            max-width: 300px;
-            margin: 0 auto;
-            display: block;
-        }
-        #subscribe button {
-            background-color: #007bff;
-            color: white;
-            padding: 10px 15px;
-            border: none;
-            border-radius: 5px;
-            font-size: 1.2em;
-            cursor: pointer;
-            transition: background 0.3s ease;
-            max-width: 300px;
-            display: block;
-            margin: 0 auto;
-        }
-        #subscribe input:focus, #subscribe button:focus {
-            outline: 2px solid #007BFF;
-        }
-        #subscribe button:hover {
-            background-color: #0056b3;
-        }
-        a {
-            display: inline-block;
-            padding: 12px 24px;
-            font-size: 16px;
-            text-decoration: none;
-        }
-        a:focus, a:hover {
-            background-color: #e9ecef;
-            outline: 2px solid #007BFF;
-            color: #052c55;
-        }
-        .dark-mode {
-            background-color: #121212;
-            color: white;
-        }
-        .dark-mode header,
-        .dark-mode nav,
-        .dark-mode .section,
-        .dark-mode #subscribe {
-            background-color: #1e1e1e;
-            color: white;
-        }
-        .dark-mode nav a {
-            color: #ddd;
-        }
-        .dark-mode a:hover {
-            background-color: #333;
-            color: #fff;
-        }
-        .video-container {
-            display: flex;
-            overflow-x: auto;
-            gap: 1rem;
-            padding: 1rem;
-            scroll-snap-type: x mandatory;
-            scrollbar-width: thin;
-            scrollbar-color: #888 transparent;
-        }
-        .video-container::-webkit-scrollbar {
-            height: 8px;
-        }
-        .video-container::-webkit-scrollbar-thumb {
-            background: #888;
-            border-radius: 10px;
-        }
-        .video-container::-webkit-scrollbar-track {
-            background: transparent;
-        }
-        .video-container iframe {
-            flex: 1 1 360px;
-            max-width: 100%;
-            height: 215px;
-            border: none;
-        }
-        .video-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
-            margin-top: 2rem;
-        }
-        .video-card {
-            flex: 0 0 auto;
-            width: 250px;
-            border-radius: 10px;
-            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
-            padding: 0.5rem;
-            background-color: white;
-            scroll-snap-align: start;
-            text-align: center;
-        }
-        .video-card:hover {
-            transform: translateY(-4px);
-        }
-        .thumbnail {
-            width: 100%;
-            border-radius: 8px;
-            margin-bottom: 0.75rem;
-        }
-        .video-title {
-            font-size: 1rem;
-            font-weight: 600;
-            margin-bottom: 0.5rem 0;
-            color: #333;
-        }
-        .watch-button {
-            display: inline-block;
-            padding: 0.4rem 0.8rem;
-            background-color: #c62828;
-            color: white;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        .watch-button:hover {
-            background-color: #a30000;
-        }
-        @media (max-width: 600px) {
-            header h1 {
-                font-size: 1.5rem;
-            }
-            nav a {
-                display: block;
-                margin: 5px 0;
-                font-size: 1rem;
-            }
-            #teams ul {
-                display: grid;
-                grid-template-columns: 1fr 1fr;
-                gap: 12px;
-            }
-            #teams li {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                text-align: center;
-                background-color: #f1f1f1;
-                padding: 10px;
-                border-radius: 6px;
-            }
-            #teams img {
-                margin: 0 0 6px 0;
-                width: 40px;
-                height: auto;
-            }
-            .section {
-                padding: 15px;
-            }
-            #subscribe {
-                padding: 15px;
-            }
-            #subscribe input,
-            #subscribe button {
-                font-size: 1rem;
-                padding: 8px;
-            }
-            .video-container iframe {
-                height: 200px;
-                width: 100%;
-            }
-}
-    </style>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="styling.css">
 </head>
 <body>
     <header>
         <h1>The Women's Cricket Hub</h1>
     </header>
-    <nav aria-label="Main Navigation">
+    <nav class="desktop-nav d-none d-lg-flex" aria-label="Main Navigation">
         <a href="#introduction">Introduction</a>
         <a href="#teams">Teams</a>
         <a href="#competitions">Competitions</a>
         <a href="#news">News</a>
         <a href="#subscribe">Subscribe</a>
     </nav>
+    
+    <nav class="mobile-nav d-lg-none" aria-label="Mobile Navigation">
+        <div class="container-fluid">
+          <button class="menu-button" type="button" data-bs-toggle="collapse" data-bs-target="#mobileMenu"
+            aria-controls="mobileMenu" aria-expanded="false" aria-label="Toggle navigation">
+            &#9776;
+          </button>
+          <div class="collapse" id="mobileMenu">
+            <div class="list-group mt-2">
+              <a class="list-group-item list-group-item-action" href="#introduction">Introduction</a>
+              <a class="list-group-item list-group-item-action" href="#teams">Teams</a>
+              <a class="list-group-item list-group-item-action" href="#competitions">Competitions</a>
+              <a class="list-group-item list-group-item-action" href="#news">News</a>
+              <a class="list-group-item list-group-item-action" href="#subscribe">Subscribe</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+           
     <div class="container">
         <section id="introduction" class="section">
             <h2>Introduction</h2>
@@ -274,9 +47,9 @@
         <section id="teams" class="section">
             <h2>Teams</h2>
             
-            <h3>Tier 1 (Fully Professional)</h3>
+            <h3>Tier 1 (Full-Time Professional)</h3>
             <ul>
-                <li><img src="images/teams/durham.PNG" alt="Durham Logo"> Durham</li>
+                <li><img src="images/teams/durham.PNG" alt="Durham Logo"> <a href="durham.html"> Durham </a> </li>
                 <li><img src="images/teams/essex.png" alt="Essex Logo"> Essex</li>
                 <li><img src="images/teams/hampshire.png" alt="Hampshire Logo"> Hampshire</li>
                 <li><img src="images/teams/lancashire.png" alt="Lancashire Logo"> Lancashire</li>
@@ -323,6 +96,52 @@
                 </li>
             </ul>
         </section>
+        <section id="poll" class="section">
+            <h2>Fan Poll</h2>
+            <p>Which competition are you most excited about?</p>
+            <form id="pollForm">
+                <div class="form-check">
+                    <input type="radio" id="blast" name="competition" value="T20 Blast" class="form-check-input" required>
+                    <label for="blast" class="form-check-label">T20 Blast</label>
+                </div>
+                
+                <div class="form-check">
+                    <input type="radio" id="oneDay" name="competition" value="One-Day Cup" class="form-check-input">
+                    <label for="oneDay" class="form-check-label">One-Day Cup</label>
+                </div>
+                
+                <div class="form-check">
+                    <input type="radio" id="countyCup" name="competition" value="T20 County Cup" class="form-check-input">
+                    <label for="countyCup" class="form-check-label">T20 County Cup</label>
+                </div>
+        
+                <button type="submit" class="btn btn-success mt-3">Vote</button>
+            </form>
+            <div id="pollResults" class="mt-4">
+                <h3>Live Results</h3>
+            
+                <div class="mb-3">
+                    <label>T20 Blast</label>
+                    <div class="progress">
+                        <div id="blastBar" class="progress-bar bg-primary" role="progressbar" style="width: 0%">0 votes</div>
+                    </div>
+                </div>
+            
+                <div class="mb-3">
+                    <label>One-Day Cup</label>
+                    <div class="progress">
+                        <div id="oneDayBar" class="progress-bar bg-danger" role="progressbar" style="width: 0%">0 votes</div>
+                    </div>
+                </div>
+            
+                <div class="mb-3">
+                    <label>T20 County Cup</label>
+                    <div class="progress">
+                        <div id="countyCupBar" class="progress-bar bg-warning" role="progressbar" style="width: 0%">0 votes</div>
+                    </div>
+                </div>
+            </div>                       
+        </section>              
         <section id="news" class="section">
             <h2>News</h2>
             <p>Here are some of the latest updates from the England Women's cricket team.</p>
@@ -330,7 +149,7 @@
             <script>
                 const apiKey = 'AIzaSyCrK4AcAp-Veel6ffC7kG7V1BlIvTqZ0fI';
                 const playlistId = 'PLLtUhzivrSZReX_c6mul4GxijeXNTEGOi';
-                const maxResults = 6;
+                const maxResults = 10;
                 fetch(`https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=${maxResults}&playlistId=${playlistId}&key=${apiKey}`)
                     .then(response => response.json())
                     .then(data => {
@@ -409,7 +228,7 @@
         bottom: 20px;
         right: 20px;
         padding: 10px 15px;
-        background-color: #007bff;
+        background-color: #052c55;
         color: white;
         border: none;
         border-radius: 5px;
@@ -430,6 +249,66 @@
         document.getElementById("toggleTheme").addEventListener("click", () => {
             document.body.classList.toggle("dark-mode");
         });
-        </script>  
+    </script>
+    <script>
+        const pollForm = document.getElementById('pollForm');
+    
+        const votes = {
+            "T20 Blast": 0,
+            "One-Day Cup": 0,
+            "T20 County Cup": 0
+        };
+    
+        pollForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+    
+            const selected = document.querySelector('input[name="competition"]:checked');
+            
+            if (selected) {
+                const competition = selected.value;
+                votes[competition]++;
+    
+                Swal.fire({
+                    title: 'Thank you!',
+                    text: `You voted for the ${competition}`,
+                    icon: 'success',
+                    confirmButtonText: 'OK'
+                });
+    
+                updateProgressBars();
+                pollForm.reset();
+            } else {
+                Swal.fire({
+                    title: 'Oops!',
+                    text: 'Please select a competition before voting.',
+                    icon: 'warning',
+                    confirmButtonText: 'Got it!'
+                });
+            }
+        });
+    
+        function updateProgressBars() {
+            const totalVotes = votes["T20 Blast"] + votes["One-Day Cup"] + votes["T20 County Cup"];
+    
+            const blastPercent = totalVotes ? (votes["T20 Blast"] / totalVotes) * 100 : 0;
+            const oneDayPercent = totalVotes ? (votes["One-Day Cup"] / totalVotes) * 100 : 0;
+            const countyCupPercent = totalVotes ? (votes["T20 County Cup"] / totalVotes) * 100 : 0;
+    
+            document.getElementById('blastBar').style.width = `${blastPercent}%`;
+            document.getElementById('blastBar').textContent = `${votes["T20 Blast"]} votes`;
+    
+            document.getElementById('oneDayBar').style.width = `${oneDayPercent}%`;
+            document.getElementById('oneDayBar').textContent = `${votes["One-Day Cup"]} votes`;
+    
+            document.getElementById('countyCupBar').style.width = `${countyCupPercent}%`;
+            document.getElementById('countyCupBar').textContent = `${votes["T20 County Cup"]} votes`;
+        }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>        
+    <footer class="site-footer">
+        <div>
+          <p>© 2025 Women's Cricket Hub</p>
+        </div>
+    </footer>              
 </body>
 </html>
