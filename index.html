@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="styling.css">
 </head>
 <body>
-    <header>
+    <header role="banner">
         <h1>The Women's Cricket Hub</h1>
     </header>
     <nav class="desktop-nav d-none d-lg-flex" aria-label="Main Navigation">
@@ -38,7 +38,7 @@
         </div>
       </nav>
            
-    <div class="container">
+    <main class="container" id='main-content' role="main">
         <section id="introduction" class="section">
             <h2>Introduction</h2>
             <p>Women's domestic cricket in England and Wales has grown significantly in recent years, featuring professional teams and competitive tournaments. The England & Wales Cricket Board have recently committed to a complete restructure of professional women's cricket, resulting in a new 3-tiered system.</p>
@@ -117,27 +117,45 @@
         
                 <button type="submit" class="btn btn-success mt-3">Vote</button>
             </form>
-            <div id="pollResults" class="mt-4">
+            <div id="pollResults" class="mt-4" aria-live="polite">
                 <h3>Live Results</h3>
             
                 <div class="mb-3">
                     <label>T20 Blast</label>
-                    <div class="progress">
-                        <div id="blastBar" class="progress-bar bg-primary" role="progressbar" style="width: 0%">0 votes</div>
+                    <div id="blastBar"
+                        class="progress-bar bg-primary"
+                        role="progressbar"
+                        aria-valuenow="0"
+                        aria-valuemin="0"
+                        aria-valuemax="100"
+                        style="width: 0%;">
+                        0 votes
                     </div>
                 </div>
             
                 <div class="mb-3">
                     <label>One-Day Cup</label>
-                    <div class="progress">
-                        <div id="oneDayBar" class="progress-bar bg-danger" role="progressbar" style="width: 0%">0 votes</div>
+                    <div id="oneDayBar"
+                        class="progress-bar bg-danger"
+                        role="progressbar"
+                        aria-valuenow="0"
+                        aria-valuemin="0"
+                        aria-valuemax="100"
+                        style="width: 0%;">
+                        0 votes
                     </div>
                 </div>
             
                 <div class="mb-3">
                     <label>T20 County Cup</label>
-                    <div class="progress">
-                        <div id="countyCupBar" class="progress-bar bg-warning" role="progressbar" style="width: 0%">0 votes</div>
+                    <div id="countyCupBar"
+                        class="progress-bar bg-warning"
+                        role="progressbar"
+                        aria-valuenow="0"
+                        aria-valuemin="0"
+                        aria-valuemax="100"
+                        style="width: 0%;">
+                        0 votes
                     </div>
                 </div>
             </div>                       
@@ -181,6 +199,7 @@
                                     watchButton.textContent = 'Watch';
                                     watchButton.href = `https://www.youtube.com/watch?v=${videoId}`;
                                     watchButton.target = '_blank';
+                                    watchButton.setAttribute('aria-label', `Watch ${title} on YouTube`);
 
                                     card.appendChild(img);
                                     card.appendChild(h3);
@@ -209,8 +228,8 @@
                 <button type="submit">Subscribe</button>
             </form>
         </section>
-    </div>
-    <button id="toggleTheme" style="
+    </main>
+    <button id="toggleTheme" aria-label="Toggle dark mode" aria-pressed="false" style="
         position: fixed;
         bottom: 20px;
         left: 20px;
@@ -222,7 +241,7 @@
         cursor: pointer;
         z-index: 1000;
         ">🌙 Dark Mode</button>
-    <button id="backToTop" style="
+    <button id="backToTop" aria-label="Back to top of page" style="
         display: none;
         position: fixed;
         bottom: 20px;
@@ -237,19 +256,25 @@
         ">⬆ Top</button>
     <script>
         const backToTop = document.getElementById("backToTop");
-        
+    
         window.onscroll = () => {
             backToTop.style.display = window.scrollY > 300 ? "block" : "none";
         };
-        
+    
         backToTop.onclick = () => {
             window.scrollTo({ top: 0, behavior: "smooth" });
         };
-        
-        document.getElementById("toggleTheme").addEventListener("click", () => {
-            document.body.classList.toggle("dark-mode");
+    
+        const toggleThemeBtn = document.getElementById("toggleTheme");
+    
+        toggleThemeBtn.setAttribute("aria-pressed", "false");
+    
+        toggleThemeBtn.addEventListener("click", () => {
+            const isDark = document.body.classList.toggle("dark-mode");
+            toggleThemeBtn.setAttribute("aria-pressed", isDark ? "true" : "false");
         });
     </script>
+    
     <script>
         const pollForm = document.getElementById('pollForm');
     
@@ -295,17 +320,20 @@
             const countyCupPercent = totalVotes ? (votes["T20 County Cup"] / totalVotes) * 100 : 0;
     
             document.getElementById('blastBar').style.width = `${blastPercent}%`;
+            document.getElementById('blastBar').setAttribute('aria-valuenow', blastPercent);
             document.getElementById('blastBar').textContent = `${votes["T20 Blast"]} votes`;
     
             document.getElementById('oneDayBar').style.width = `${oneDayPercent}%`;
+            document.getElementById('oneDayBar').setAttribute('aria-valuenow', oneDayPercent);
             document.getElementById('oneDayBar').textContent = `${votes["One-Day Cup"]} votes`;
     
             document.getElementById('countyCupBar').style.width = `${countyCupPercent}%`;
+            document.getElementById('countyCupBar').setAttribute('aria-valuenow', countyCupPercent);
             document.getElementById('countyCupBar').textContent = `${votes["T20 County Cup"]} votes`;
         }
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>        
-    <footer class="site-footer">
+    <footer class="site-footer" role="contentinfo">
         <div>
           <p>© 2025 Women's Cricket Hub</p>
         </div>

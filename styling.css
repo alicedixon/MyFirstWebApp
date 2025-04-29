@@ -257,9 +257,6 @@ a:focus, a:hover {
     box-shadow: none;
 }
 .back-button-link {
-    text-decoration: none;
-}
-.back-button {
     padding: 10px 20px;
     background-color: #052c55;
     color: white;
@@ -269,8 +266,9 @@ a:focus, a:hover {
     font-size: 1rem;
     transition: background-color 0.3s ease;
 }
-.back-button:hover {
+.back-button-link:hover {
     background-color: #074b94;
+    color: white;
 }
 .header-row {
     display: flex;

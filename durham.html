@@ -7,11 +7,11 @@
   <link rel="stylesheet" href="styling.css" />
 </head>
 <body>
-  <div class="header-row">
+  <header class="header-row">
     <div class="header-left">
-      <a href="index.html" class="back-button-link">
-        <button type="button" class="back-button">← Back</button>
-      </a>
+      <a href="index.html" class="back-button-link" role="button" aria-label="Go back to homepage">
+        ← Back
+      </a>      
     </div>
   
     <div class="header-center">
@@ -22,17 +22,18 @@
     <div class="header-right">
       <img src="images/wch logo.png" alt="Women's Cricket Hub Logo" class="site-logo">
     </div>
-  </div>  
+  </header>  
 
-  <div class="container"> 
+  <main class="container"> 
     <section id="about" class="section">
       <h2>About</h2>
       <p>Durham is one of eight new women's cricket teams that are on a full-time professional training and games programme.</p>
       <p>They are based at the Riverside ground in Chester-le-Street, County Durham, which has also been home to a number of England Men's test matches in recent years.</p>
 
-      <div class="ground-image-container">
+      <figure class="ground-image-container">
         <img src="images/grounds/riverside.jpg" alt="Riverside Ground, Chester-le-Street" class="ground-image" />
-      </div>
+        <figcaption>Riverside Ground, Chester-le-Street</figcaption>
+      </figure>
     </section>
 
     <section id= "squad" class="section">
@@ -41,7 +42,7 @@
         <p>Hover over each player to find out more about them!</p>
         <div class="card-slider">
           
-          <div class="flip-card">
+          <div class="flip-card" tabindex="0" role="button" aria-label="Card for Hollie Armitage - tap or hover for more details.">
             <div class="flip-card-inner">
               
               <div class="flip-card-front">
@@ -58,7 +59,7 @@
             </div>
           </div>          
     
-          <div class="flip-card">
+          <div class="flip-card" tabindex="0" role="button" aria-label="Card for Leah Dobson - tap or hover for more details.">
             <div class="flip-card-inner">
               
               <div class="flip-card-front">
@@ -75,7 +76,7 @@
             </div>
           </div> 
     
-          <div class="flip-card">
+          <div class="flip-card" tabindex="0" role="button" aria-label="Card for Lauren Filer - tap or hover for more details.">
             <div class="flip-card-inner">
               
               <div class="flip-card-front">
@@ -92,7 +93,7 @@
             </div>
           </div> 
 
-          <div class="flip-card">
+          <div class="flip-card" tabindex="0" role="button" aria-label="Card for Katherine Fraser - tap or hover for more details.">
             <div class="flip-card-inner">
               
               <div class="flip-card-front">
@@ -109,7 +110,7 @@
             </div>
           </div>
 
-          <div class="flip-card">
+          <div class="flip-card" tabindex="0" role="button" aria-label="Card for Abi Glen - tap or hover for more details.">
             <div class="flip-card-inner">
               
               <div class="flip-card-front">
@@ -126,7 +127,7 @@
             </div>
           </div>
 
-          <div class="flip-card">
+          <div class="flip-card" tabindex="0" role="button" aria-label="Card for Bess Heath - tap or hover for more details.">
             <div class="flip-card-inner">
               
               <div class="flip-card-front">
@@ -143,7 +144,7 @@
             </div>
           </div>
 
-          <div class="flip-card">
+          <div class="flip-card" tabindex="0" role="button" aria-label="Card for Trudy Johnson - tap or hover for more details.">
             <div class="flip-card-inner">
               
               <div class="flip-card-front">
@@ -160,7 +161,7 @@
             </div>
           </div>
 
-          <div class="flip-card">
+          <div class="flip-card" tabindex="0" role="button" aria-label="Card for Katie Levick - tap or hover for more details.">
             <div class="flip-card-inner">
               
               <div class="flip-card-front">
@@ -177,7 +178,7 @@
             </div>
           </div>
 
-          <div class="flip-card">
+          <div class="flip-card" tabindex="0" role="button" aria-label="Card for Emma Marlow - tap or hover for more details.">
             <div class="flip-card-inner">
               
               <div class="flip-card-front">
@@ -194,7 +195,7 @@
             </div>
           </div>
 
-          <div class="flip-card">
+          <div class="flip-card" tabindex="0" role="button" aria-label="Card for Phoebe Turner - tap or hover for more details.">
             <div class="flip-card-inner">
               
               <div class="flip-card-front">
@@ -211,7 +212,7 @@
             </div>
           </div>
 
-          <div class="flip-card">
+          <div class="flip-card" tabindex="0" role="button" aria-label="Card for Lizzie Scott - tap or hover for more details.">
             <div class="flip-card-inner">
               
               <div class="flip-card-front">
@@ -228,7 +229,7 @@
             </div>
           </div>
 
-          <div class="flip-card">
+          <div class="flip-card" tabindex="0" role="button" aria-label="Card for Sophia Turner - tap or hover for more details.">
             <div class="flip-card-inner">
               
               <div class="flip-card-front">
@@ -245,7 +246,7 @@
             </div>
           </div>
 
-          <div class="flip-card">
+          <div class="flip-card" tabindex="0" role="button" aria-label="Card for Mady Villiers - tap or hover for more details.">
             <div class="flip-card-inner">
               
               <div class="flip-card-front">
@@ -262,7 +263,7 @@
             </div>
           </div>
 
-          <div class="flip-card">
+          <div class="flip-card" tabindex="0" role="button" aria-label="Card for Emily Windsor - tap or hover for more details.">
             <div class="flip-card-inner">
               
               <div class="flip-card-front">
@@ -304,12 +305,13 @@
           style="border:0;"
           allowfullscreen=""
           loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade">
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Map showing Riverside Ground in Chester-le-Street">
         </iframe>
       </div>
     </section>
     
-  </div>
+  </main>
 
   <footer class="site-footer">
     <p>© 2025 Women's Cricket Hub</p>
