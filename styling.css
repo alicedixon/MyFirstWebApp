@@ -8,14 +8,14 @@ body {
     min-height: 100vh;
 }
 header {
-    background-color: #007bff;
-    color: white;
+    background-color: #70b0f4;
+    color: #052c55;
     text-align: center;
     padding: 1rem;
 }
 .site-footer {
-    background-color: #007bff;
-    color: white;
+    background-color: #70b0f4;
+    color: #052c55;
     padding: 1rem 0;
     text-align: center;
 }
@@ -54,8 +54,8 @@ header.team-header {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #007bff;
-    color: white;
+    background-color: #70b0f4;
+    color: #052c55;
     padding: 1rem 2rem;
     gap: 1rem;
     text-align: center;
@@ -119,8 +119,8 @@ header.team-header {
     display: block;
 }
 #subscribe button {
-    background-color: #007bff;
-    color: white;
+    background-color: #70b0f4;
+    color: #052c55;
     padding: 10px 15px;
     border: none;
     border-radius: 5px;
@@ -132,7 +132,7 @@ header.team-header {
     margin: 0 auto;
 }
 #subscribe input:focus, #subscribe button:focus {
-    outline: 2px solid #007BFF;
+    outline: 2px solid #70b0f4;
 }
 #subscribe button:hover {
     background-color: #0056b3;
@@ -145,7 +145,7 @@ a {
 }
 a:focus, a:hover {
     background-color: #e9ecef;
-    outline: 2px solid #007BFF;
+    outline: 2px solid #70b0f4;
     color: #052c55;
 }
 .dark-mode {
@@ -275,9 +275,9 @@ a:focus, a:hover {
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
-    background-color: #007BFF;
+    background-color: #70b0f4;
     border-bottom: 1px solid #ccc;
-    color: white;
+    color: #052c55;
 }
 .header-left,
 .header-center,
